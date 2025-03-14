@@ -10,7 +10,7 @@ import * as React from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Divider from '@mui/material/Divider';
-
+import Swal from 'sweetalert2';
 
 const style = {
   py: 0,
@@ -48,9 +48,23 @@ const ToDoListItem = () => {
   }
 
   const handleDelete = (index) => {
-    const newList = listItems.filter((_, i) => i !== index);
-    setListItems(newList);
+    Swal.fire({
+      title: "¿Quieres eliminar la tarea?",
+      showDenyButton: true,
+      confirmButtonText: "Aceptar",
+      denyButtonText: `Cancelar`
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const newList = listItems.filter((_, i) => i !== index);
+        setListItems(newList);
+      } else if (result.isDenied) {
+        Swal.fire("Se canceló la eliminación de la tarea", "", "info");
+      }
+    });
   };
+
+  // https://sweetalert2.github.io/
+
 
   return (
     <div className='container-fluid p-2'>

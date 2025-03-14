@@ -49,16 +49,16 @@ const ToDoListItem = () => {
 
   const handleDelete = (index) => {
     Swal.fire({
-      title: "¿Quieres eliminar la tarea?",
+      title: "Do you want to errase this task?",
       showDenyButton: true,
-      confirmButtonText: "Aceptar",
-      denyButtonText: `Cancelar`
+      confirmButtonText: "Accept",
+      denyButtonText: `Cancel`
     }).then((result) => {
       if (result.isConfirmed) {
         const newList = listItems.filter((_, i) => i !== index);
         setListItems(newList);
       } else if (result.isDenied) {
-        Swal.fire("Se canceló la eliminación de la tarea", "", "info");
+        Swal.fire("You didn't delete any tasks", "", "info");
       }
     });
   };

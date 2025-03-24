@@ -1,10 +1,3 @@
-// Your app needs to look like this.
-// The tasks are added when the user presses enter on the keyboard, or you can have your own button.
-// The delete icon shows only when the task is hovered.
-// The user can add as many tasks as they want.
-// When there are no tasks the list should say "No tasks, add a task"
-// There is no way to update a task, the user will have to delete and create again.
-
 import { useState } from "react"
 import * as React from 'react';
 import List from '@mui/material/List';
@@ -62,9 +55,6 @@ const ToDoListItem = () => {
       }
     });
   };
-
-  // https://sweetalert2.github.io/
-
 
   return (
     <div className='container-fluid p-2'>

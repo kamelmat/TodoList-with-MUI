@@ -9,15 +9,15 @@ function timeConversion(s) {
         hour = hour === 12 ? "12" : (hour + 12).toString();
       }
       
-      let minutesAndSeconds = s.slice(3, 8);
+      let minutesAndSeconds = s.slice(2, 8);
       
       return hour + minutesAndSeconds;
     
       
   }
   
-  timeConversion("01:00:20PM");
-  timeConversion("12:00:20PM");
-  timeConversion("05:00:20PM");
-  timeConversion("08:00:20PM");
+ console.log( timeConversion("01:00:20PM"))
+ console.log (timeConversion("12:00:20PM"));
+ console.log (timeConversion("05:00:20PM"));
+ console.log (timeConversion("08:00:20PM"));
   
